@@ -2,13 +2,13 @@ import sys
 import os
 import urllib.request
 
-path = '<Your Project Folder here>'
+path = "C:\\Users\\kingt\\Downloads"
 
 
 def connect():
-    # Checking internet connection
+    # checking internet connection
     try:
-        urllib.request.urlopen('http://google.com')
+        urllib.request.urlopen("http://google.com")
         return True
     except:
         return False
@@ -16,65 +16,108 @@ def connect():
 
 def localrepo(folder=str(sys.argv[1]).title()):
     try:
-        _dir = path + "/"+folder
-        commands = ['git init', f'echo #{folder}>Readme.md',
-                    'git add Readme.md', 'git commit -m "Initial Commit"']
+        _dir = path + '/' + folder
+        commands = ['git init',
+                    f'echo # {folder}> README.md',
+                    'git add README.md',
+                    'git commit -m "Initial Commit"']
         os.mkdir(_dir)
         os.chdir(_dir)
         for c in commands:
             os.system(c)
-        print(f'{folder} create Locally')
+        print(f'{folder} created locally')
         os.system('code .')
     except:
-        x = input(f'{folder} already exits try another name or exit(y): ')
-        if(x.lower() == 'y'):
-            exit('Exit')
+        x = input(
+            f'{folder} already exist Try another Folder name or exit(y): ')
+        if (x.lower() == "y"):
+            exit("Exit")
         else:
             localrepo(x)
 
 
-def globalrepo(folder=str(sys.argv[1]).title()):
+def globalrepe(folder=str(sys.argv[1]).title()):
     try:
-        _dir = path + "/" + folder
-        # https://github.com/setting/tokens
-        token = '<Your Token here>'
-        g = Github(token)
-        user = g.get_user()
-        login = user.login
-        repo = user.create_repo(folder)
-        commands = ['git init', f'git remote add origin https://github.com/{login}/{folder}.git', f'echo # {folder}>Readme.md',
-                    'git add Readme.md', 'git commit -m "Initial Commit"', 'git push -u origin master']
-        os.mkdir(_dir)
+        _dir = path + '/' + folder
+        commands = [f'echo # {folder}> README.md',
+                    'git add README.md',
+                    'git commit -m "Initial commit"',
+                    'git push -u origin master']
+        os.chdir(path)
+        if len(sys.argv) == 4:
+            os.system(f'gh repo create {folder} --private -y')
+        else:
+            os.system(f'gh repo create {folder} --public -y')
         os.chdir(_dir)
         for c in commands:
             os.system(c)
-        print(f'{folder} created Globally')
+        print(f'{folder} created globally')
         os.system('code .')
     except:
         x = input(
-            f'{folder} repo/folder already exit try another name or exit(y): ')
-        if(x.lower() == 'y'):
-            exit('Exit')
-        elif(connect()):
-            globalrepo(x)
+            f'{folder} Repo already exist Try another name or exit(y): ')
+        if (x.lower() == "y"):
+            exit("Exit")
+        elif (connect()):
+            globalrepe(x)
         else:
-            x = input(f'No Internet Connection want to work locally(y) or exit: ')
-            if(x.lower() == 'y'):
+            y = input(
+                "No Internet Connection! Want to work locally (y) or exit: ")
+            if (y.lower() == "y"):
                 localrepo(x)
             else:
-                exit('Exit')
+                exit("Exit")
+
+
+def organrepe(folder=str(sys.argv[1]).title()):
+    try:
+        _dir = path + '/' + folder
+        commands = [f'echo # {folder}> README.md',
+                    'git add README.md',
+                    'git commit -m "Initial commit"',
+                    'git push -u origin master']
+        os.chdir(path)
+        if len(sys.argv) == 4:
+            os.system(
+                f'gh repo create king-technologies/{folder} --private  -y')
+        else:
+            os.system(
+                f'gh repo create king-technologies/{folder} --public -y')
+        os.chdir(_dir)
+        for c in commands:
+            os.system(c)
+        print(f'{folder} created globally')
+        os.system('code .')
+    except:
+        x = input(
+            f'{folder} Repo already exist Try another name or exit(y): ')
+        if (x.lower() == "y"):
+            exit("Exit")
+        elif (connect()):
+            organrepe(x)
+        else:
+            y = input(
+                "No Internet Connection! Want to work locally (y) or exit: ")
+            if (y.lower() == "y"):
+                localrepo(x)
+            else:
+                exit("Exit")
 
 
 if len(sys.argv) == 2:
-    # Pygithub package
-    from github import Github
+    localrepo()
+elif len(sys.argv) >= 3:
     if(connect()):
-        globalrepo()
+        if sys.argv[2] == "g":
+            globalrepe()
+        elif sys.argv[2] == "o":
+            organrepe()
+        else:
+            print("Not a valid Input")
     else:
-        y = input('No internet connection want to create local repo (y) or exit')
-        if(y.lower() == 'y'):
+        y = input(
+            "No Internet Connection! Want to work locally (y) or exit:")
+        if (y.lower() == "y"):
             localrepo()
         else:
-            exit('Exit')
-elif sys.argv[2] == 'l':
-    localrepo()
+            exit("Exit")
