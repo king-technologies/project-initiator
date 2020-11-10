@@ -20,7 +20,8 @@ def localrepo(folder=str(sys.argv[1]).title()):
         commands = ['git init',
                     f'echo # {folder}> README.md',
                     'git add README.md',
-                    'git commit -m "Initial Commit"']
+                    'git commit -m "Initial Commit"',
+                    'git branch -M main']
         os.mkdir(_dir)
         os.chdir(_dir)
         for c in commands:
@@ -42,7 +43,8 @@ def globalrepe(folder=str(sys.argv[1]).title()):
         commands = [f'echo # {folder}> README.md',
                     'git add README.md',
                     'git commit -m "Initial commit"',
-                    'git push -u origin master']
+                    'git branch -M main',
+                    'git push -u origin main']
         os.chdir(path)
         if len(sys.argv) == 4:
             os.system(f'gh repo create {folder} --private -y')
@@ -75,7 +77,8 @@ def organrepe(folder=str(sys.argv[1]).title()):
         commands = [f'echo # {folder}> README.md',
                     'git add README.md',
                     'git commit -m "Initial commit"',
-                    'git push -u origin master']
+                    'git branch -M main',
+                    'git push -u origin main']
         os.chdir(path)
         if len(sys.argv) == 4:
             os.system(
@@ -108,9 +111,9 @@ if len(sys.argv) == 2:
     localrepo()
 elif len(sys.argv) >= 3:
     if(connect()):
-        if sys.argv[2] == "g":
+        if sys.argv[2] == "-g":
             globalrepe()
-        elif sys.argv[2] == "o":
+        elif sys.argv[2] == "-o":
             organrepe()
         else:
             print("Not a valid Input")
