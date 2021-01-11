@@ -2,7 +2,7 @@ import sys
 import os
 import urllib.request
 
-path = "C:\\Users\\kingt\\Downloads"
+path = "E:\\King Technologies\\Repos"
 
 
 def connect():
@@ -14,7 +14,7 @@ def connect():
         return False
 
 
-def localrepo(folder=str(sys.argv[1]).title()):
+def localrepo(folder=str(sys.argv[1])):
     try:
         _dir = path + '/' + folder
         commands = ['git init',
@@ -37,7 +37,7 @@ def localrepo(folder=str(sys.argv[1]).title()):
             localrepo(x)
 
 
-def globalrepe(folder=str(sys.argv[1]).title()):
+def globalrepe(folder=str(sys.argv[1])):
     try:
         _dir = path + '/' + folder
         commands = [f'echo # {folder}> README.md',
@@ -71,7 +71,7 @@ def globalrepe(folder=str(sys.argv[1]).title()):
                 exit("Exit")
 
 
-def organrepe(folder=str(sys.argv[1]).title()):
+def organrepe(folder=str(sys.argv[1])):
     try:
         _dir = path + '/' + folder
         commands = [f'echo # {folder}> README.md',
