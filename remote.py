@@ -2,7 +2,7 @@ import sys
 import os
 import urllib.request
 
-path = "E:\\King Technologies\\Repos"
+path = "E:\\King Technologies\\Projects"
 
 
 def connect():
