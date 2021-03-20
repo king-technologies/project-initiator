@@ -8,13 +8,13 @@ path = "E:\\King Technologies\\Projects"
 def connect():
     # checking internet connection
     try:
-        urllib.request.urlopen("http://google.com")
+        urllib.request.urlopen("https://kingtechnologies.in")
         return True
     except:
         return False
 
 
-def localrepo(folder=str(sys.argv[1])):
+def localRepo(folder=str(sys.argv[1])):
     try:
         _dir = path + '/' + folder
         commands = ['git init',
@@ -34,10 +34,10 @@ def localrepo(folder=str(sys.argv[1])):
         if (x.lower() == "y"):
             exit("Exit")
         else:
-            localrepo(x)
+            localRepo(x)
 
 
-def globalrepe(folder=str(sys.argv[1])):
+def globalRepo(folder=str(sys.argv[1])):
     try:
         _dir = path + '/' + folder
         commands = [f'echo # {folder}> README.md',
@@ -46,81 +46,54 @@ def globalrepe(folder=str(sys.argv[1])):
                     'git branch -M main',
                     'git push -u origin main']
         os.chdir(path)
-        if len(sys.argv) == 4:
-            os.system(f'gh repo create {folder} --private -y')
-        else:
-            os.system(f'gh repo create {folder} --public -y')
-        os.chdir(_dir)
-        for c in commands:
-            os.system(c)
-        print(f'{folder} created globally')
-        os.system('code .')
-    except:
-        x = input(
-            f'{folder} Repo already exist Try another name or exit(y): ')
-        if (x.lower() == "y"):
-            exit("Exit")
-        elif (connect()):
-            globalrepe(x)
-        else:
-            y = input(
-                "No Internet Connection! Want to work locally (y) or exit: ")
-            if (y.lower() == "y"):
-                localrepo(x)
+
+        if sys.argv[2] == "-g":
+            if len(sys.argv) == 4:
+                os.system(f'gh repo create {folder} --private -y')
             else:
-                exit("Exit")
+                os.system(f'gh repo create {folder} --public -y')
+        elif sys.argv[2] == "-o":
+            if len(sys.argv) == 4:
+                os.system(
+                    f'gh repo create king-technologies/{folder} --private  -y')
+            else:
+                os.system(
+                    f'gh repo create king-technologies/{folder} --public -y')
 
-
-def organrepe(folder=str(sys.argv[1])):
-    try:
-        _dir = path + '/' + folder
-        commands = [f'echo # {folder}> README.md',
-                    'git add README.md',
-                    'git commit -m "Initial commit"',
-                    'git branch -M main',
-                    'git push -u origin main']
-        os.chdir(path)
-        if len(sys.argv) == 4:
-            os.system(
-                f'gh repo create king-technologies/{folder} --private  -y')
+        if len(sys.argv) >= 3:
+            os.chdir(_dir)
+            for c in commands:
+                os.system(c)
+            print(f'{folder} created globally')
+            os.system('code .')
         else:
-            os.system(
-                f'gh repo create king-technologies/{folder} --public -y')
-        os.chdir(_dir)
-        for c in commands:
-            os.system(c)
-        print(f'{folder} created globally')
-        os.system('code .')
+            print("Not a valid Input")
+
     except:
         x = input(
             f'{folder} Repo already exist Try another name or exit(y): ')
         if (x.lower() == "y"):
             exit("Exit")
         elif (connect()):
-            organrepe(x)
+            globalRepo(x)
         else:
             y = input(
                 "No Internet Connection! Want to work locally (y) or exit: ")
             if (y.lower() == "y"):
-                localrepo(x)
+                localRepo(x)
             else:
                 exit("Exit")
 
 
 if len(sys.argv) == 2:
-    localrepo()
+    localRepo()
 elif len(sys.argv) >= 3:
     if(connect()):
-        if sys.argv[2] == "-g":
-            globalrepe()
-        elif sys.argv[2] == "-o":
-            organrepe()
-        else:
-            print("Not a valid Input")
+        globalRepo()
     else:
         y = input(
             "No Internet Connection! Want to work locally (y) or exit:")
         if (y.lower() == "y"):
-            localrepo()
+            localRepo()
         else:
             exit("Exit")
