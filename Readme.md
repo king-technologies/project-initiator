@@ -1,4 +1,4 @@
-<h1 align="center"> Project Initiator</h1>
+<h1 align="center">🌟Project Initiator🌟</h1>
 <h3 align="center">Start your project with Single Command</h3>
 
 ## Table of Contents
@@ -62,13 +62,11 @@
 🧑🏻 **Rohit Jain**
 
 - 💻[GitHub](https://github.com/rohit19060)
-- 📧[Email](rohitjain19060@gmail.com)
+- 📧[Email](mailto:rohitjain19060@gmail.com)
 - 🌐[Website](https://kingtechnologies.in)
 
 ## 🤝 Support
 
 Contributions, issues and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
 
 Give a ⭐️ if you like this project!
