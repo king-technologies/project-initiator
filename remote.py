@@ -20,8 +20,7 @@ def localRepo(folder=str(sys.argv[1])):
         commands = ['git init',
                     f'echo # {folder}> README.md',
                     'git add README.md',
-                    'git commit -m "Initial Commit"',
-                    'git branch -M main']
+                    'git commit -m "Initial Commit"']
         os.mkdir(_dir)
         os.chdir(_dir)
         for c in commands:
@@ -43,7 +42,6 @@ def globalRepo(folder=str(sys.argv[1])):
         commands = [f'echo # {folder}> README.md',
                     'git add README.md',
                     'git commit -m "Initial commit"',
-                    'git branch -M main',
                     'git push -u origin main']
         os.chdir(path)
 
