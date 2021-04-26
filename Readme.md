@@ -1,16 +1,5 @@
 <h1 align="center">🌟Project Initiator🌟</h1>
-<h3 align="center">Start your project with Single Command</h3>
-
-## Table of Contents
-
-- [Links](#links)
-- [Screenshots](#screenshots)
-- [Prerequisite](#prerequisite)
-- [Available Commands](#available-commands)
-- [Technologies Used](#technologies-used)
-- [Directory Structure](#directory-structure)
-- [Future Updates](#future-updates)
-- [Contact](#author)
+<p align="center">Start your project with Single Command</p>
 
 ## Links
 
