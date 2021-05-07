@@ -1,61 +1,164 @@
-<h1 align="center">🌟Project Initiator🌟</h1>
+<p align="center">
+  <a href="https://github.com/king-technologies/Project-Initiator" title="Project Initiator">
+    <img src="https://kingtechnologies.in/assets/images/logo.png" width="80px" alt="Project Initiator" />
+  </a>
+</p>
+<h1 align="center">🌟 Project Initiator 🌟</h1>
 <p align="center">Start your project with Single Command</p>
 
-## Links
+<p align="center">
+<a href="https://github.com/king-technologies/Project-Initiator/blob/master/LICENSE" target="_blank" title="License">
+<img src="https://img.shields.io/github/license/king-technologies/Project-Initiator?label=License&logo=Github&style=flat-square" alt="Project Initiator License" />
+</a>
+<a href="https://github.com/king-technologies/Project-Initiator/fork" target="_blank" title="Forks">
+<img src="https://img.shields.io/github/forks/king-technologies/Project-Initiator?label=Forks&logo=Github&style=flat-square" alt="Project Initiator Forks"/>
+</a>
+<a href="https://github.com/king-technologies/Project-Initiator/stargazers" target="_blank" title="Stars">
+<img src="https://img.shields.io/github/stars/king-technologies/Project-Initiator?label=Stars&logo=Github&style=flat-square" alt="Project Initiator Stars"/>
+</a>
+<a href="https://github.com/king-technologies/Project-Initiator/issues" target="_blank" title="Issues">
+<img src="https://img.shields.io/github/issues/king-technologies/Project-Initiator?label=Issues&logo=Github&style=flat-square" alt="Project Initiator Issues"/>
+</a>
+<a href="https://github.com/king-technologies/Project-Initiator/pulls" target="_blank" title="Pull Requests">
+<img src="https://img.shields.io/github/issues-pr/king-technologies/Project-Initiator?label=Pull%20Requests&logo=Github&style=flat-square" alt="Project Initiator Pull Requests"/>
+</a>
+<a href="https://github.com/king-technologies/Project-Initiator" target="_blank" title="Repo Size">
+<img src="https://img.shields.io/github/repo-size/king-technologies/Project-Initiator?label=Repo%20Size&logo=Github&style=flat-square" alt="Project Initiator Repo Size"/>
+</a>
+<a href="https://discord.gg/CJU4UNTaFt" target="_blank" title="Join Community">
+<img src="https://img.shields.io/discord/737854816402800690?color=%236d82cb&label=Join%20Community&logo=discord&logoColor=%23FFFFFF&style=flat-square" alt="Join discord community for Project Initiator"/>
+</a>
+</p>
 
-- [YouTube Video](https://youtu.be/ud4P45zhCk0)
-- [Github Repo](https://github.com/king-technologies/Project_Initiator)
+<p align="center" title="Project Initiator gif"><img src="./assets/images/main.gif" alt="Project Initiator gif" /></p>
 
-## Screenshots
+<h2 align="center">🌐 Links 🌐</h2>
+<p align="center">
+    <a href="https://youtu.be/ud4P45zhCk0" target="_blank" title="Project Initiator using Python">🖥️ Video</a>
+    ·
+    <a href="https://github.com/king-technologies/Project-Initiator" title="Project Initiator">📂 Repo</a>
+    ·
+    <a href="https://github.com/king-technologies/Project-Initiator/issues/new/choose" title="🐛Report Bug/🎊Request Feature">🚀 Got Issue</a>
+</p>
 
-![Command](/Screenshots/1.png "Command")
-![Execution](/Screenshots/2.png "Execution")
-![Repo in VSCode](/Screenshots/3.png "Repo in VSCode")
+## 🚀 Features
 
-## Prerequisite
+You are just one command away to start your next project
 
-- [Python](https://www.python.org/) Installed
+- **Create Github Repo**
+
+- **Create Organisation Repo**
+
+- **Open Project in [VSCode](https://code.visualstudio.com/ "VSCode")**
+
+## 🦋 Prerequisite
+
+- [Python](https://www.python.org/ "Python") Installed
+
 - Python Basics Understanding
-- [Git](https://git-scm.com/) Installed
+
+- [Git](https://git-scm.com/ "Git OFficial") Installed
+
 - Git Basic Understanding
-- [GH](https://cli.github.com/) Installed
 
-## Available Commands
+- [GH](https://cli.github.com/ "Github CLI") Installed
 
-- Either run `create` command in project folder or set the path of `create.bat` in environmental variable for executing create command anywhere (Run, cmd, or powershell)
-- For creating Local Repo use `create project_name` command and it will create a local repository in path provided.
-- For creating a Global Repo use `create project_name -g` command and it will create a global repository on your github profile using `gh` and make & push the initial commit
-- For creating a Organization Repo use `create project_name -o` command and it will create a Organization repository on your github profile using `gh` and make & push the initial commit
-- If you pass any other option like `-pr` then the repo will be private other wise it will be public
+## 🛠️ Installation Steps
 
-## Technologies Used
+1. Clone the repository
 
-- Python
-- Batch
-- Github
-- Git
-- GH
+```Bash
+git clone https://github.com/king-technologies/Project-Initiator.git
+```
 
-## Directory Structure
+2. Change the working directory
 
-- create.bat - Command file that will execute the python file
-- remote.py - Python file, main file that contain the script
+```Bash
+cd Project-Initiator
+```
 
-## Future Updates
+3. Add Environment Variable path of this directory
 
-1. Add project boilerplate automatically for different languages and frameworks
-2. Add GUI
+4. Run the app using terminal
 
-## Author
+**🎇 You are Ready to Go!**
 
-🧑🏻 **Rohit Jain**
+## ❗ Available Commands
 
-- 💻[GitHub](https://github.com/rohit19060)
-- 📧[Email](mailto:rohitjain19060@gmail.com)
-- 🌐[Website](https://kingtechnologies.in)
+In the project directory, you can run:
 
-## 🤝 Support
+```Bash
+create
+```
 
-Contributions, issues and feature requests are welcome!
+- Either run this command in the project folder or set the path of `create.bat` in the environmental variable for executing create command anywhere (Run, cmd, or PowerShell).
 
-Give a ⭐️ if you like this project!
+```Bash
+create <project_name>
+```
+
+- For creating Local Repo use this command and it will create a local repository in the path provided.
+
+```Bash
+create <project_name> -g
+```
+
+- For creating a Global Repo use this command and it will create a global repository on your GitHub profile using `gh` and make & push the initial commit.
+
+```Bash
+create <project_name> -o
+```
+
+- For creating an Organization Repo use this command and it will create an Organization repository on your GitHub profile using `gh` and make & push the initial commit
+
+> If you pass any other option like `-pr` then the repo will be private otherwise it will be public
+
+## 👷 Built with
+
+- [Python](https://www.python.org/ "Python"): as Main Coding Language for executing commands
+
+- [Batch](https://en.wikipedia.org/wiki/Batch_file "Batch") : For python file executor
+
+- [Github](https://github.com/ "Github") : For Repo Storage and source code management
+
+- [Git](https://git-scm.com/ "Git") : For Version Control System
+
+- [Github CLI](https://cli.github.com/ "Github CLI"): For Direct Interacting with Github
+
+## 📂 Directory Structure
+
+- `create.bat` Command file that will execute the python file
+
+- `remote.py` Python file, the main file that contains the script
+
+## 🎊 Future Updates
+
+- [ ] Add project boilerplate automatically for different languages and frameworks
+
+- [ ] Add GUI
+
+- [ ] Add Other VCS
+
+## 🧑🏻 Author
+
+**Rohit Jain**
+
+- 🌌 [Profile](https://github.com/rohit19060 "Rohit Jain")
+
+- 🏮 [Email](mailto:rohitjain19060@gmail.com?subject=Hi%20from%20Project%20Initiator "Hi!")
+
+- 🦁 [Website](https://kingtechnologies.in "Welcome")
+
+<h2 align="center">🤝 Support</h2>
+
+<h3 align="center">🎀 Contributions (<a href="https://guides.github.com/introduction/flow">GitHub flow</a>), 🔥 issues and 🥮 feature requests are most welcome!</h3>
+
+<h3 align="center">💙 If you like this project, Give it a ⭐ and Share it with friends!</h3>
+<h3 align="center">💰 Donations Links</h3>
+<p align="center">
+<a href="https://www.paypal.me/kingrohitJ" target="_blank" title="PayPal"><img src="https://kingtechnologies.in/assets/images/paypal.png" alt="PayPal"/>
+<a href="https://www.buymeacoffee.com/rohitjain" target="Buy me a Coffee/" title="PayPal"><img src="https://kingtechnologies.in/assets/images/coffee.png" alt="Buy me a Coffee"/>
+<a href="https://ko-fi.com/rohitjain" target="_blank" title="Ko-fi"><img src="https://kingtechnologies.in/assets/images/kofi.png" alt="Ko-fi"/></a>
+</p>
+
+<p align="center">Made with Python & ❤️ in India</p>
