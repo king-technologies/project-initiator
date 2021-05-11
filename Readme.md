@@ -1,40 +1,40 @@
 <p align="center">
   <a href="https://github.com/king-technologies/Project-Initiator" title="Project Initiator">
-    <img src="https://kingtechnologies.in/assets/images/logo.png" width="80px" alt="Project Initiator" />
+    <img src="https://kingtechnologies.in/assets/images/logo.png" width="80px" alt="Project Initiator"/>
   </a>
 </p>
 <h1 align="center">🌟 Project Initiator 🌟</h1>
 <p align="center">Start your project with Single Command</p>
 
 <p align="center">
-<a href="https://github.com/king-technologies/Project-Initiator/blob/master/LICENSE" target="_blank" title="License">
-<img src="https://img.shields.io/github/license/king-technologies/Project-Initiator?label=License&logo=Github&style=flat-square" alt="Project Initiator License" />
+<a href="https://github.com/king-technologies/Project-Initiator/blob/master/LICENSE" title="License">
+<img src="https://img.shields.io/github/license/king-technologies/Project-Initiator?label=License&logo=Github&style=flat-square" alt="Project Initiator License"/>
 </a>
-<a href="https://github.com/king-technologies/Project-Initiator/fork" target="_blank" title="Forks">
+<a href="https://github.com/king-technologies/Project-Initiator/fork" title="Forks">
 <img src="https://img.shields.io/github/forks/king-technologies/Project-Initiator?label=Forks&logo=Github&style=flat-square" alt="Project Initiator Forks"/>
 </a>
-<a href="https://github.com/king-technologies/Project-Initiator/stargazers" target="_blank" title="Stars">
+<a href="https://github.com/king-technologies/Project-Initiator/stargazers" title="Stars">
 <img src="https://img.shields.io/github/stars/king-technologies/Project-Initiator?label=Stars&logo=Github&style=flat-square" alt="Project Initiator Stars"/>
 </a>
-<a href="https://github.com/king-technologies/Project-Initiator/issues" target="_blank" title="Issues">
+<a href="https://github.com/king-technologies/Project-Initiator/issues" title="Issues">
 <img src="https://img.shields.io/github/issues/king-technologies/Project-Initiator?label=Issues&logo=Github&style=flat-square" alt="Project Initiator Issues"/>
 </a>
-<a href="https://github.com/king-technologies/Project-Initiator/pulls" target="_blank" title="Pull Requests">
+<a href="https://github.com/king-technologies/Project-Initiator/pulls" title="Pull Requests">
 <img src="https://img.shields.io/github/issues-pr/king-technologies/Project-Initiator?label=Pull%20Requests&logo=Github&style=flat-square" alt="Project Initiator Pull Requests"/>
 </a>
-<a href="https://github.com/king-technologies/Project-Initiator" target="_blank" title="Repo Size">
+<a href="https://github.com/king-technologies/Project-Initiator" title="Repo Size">
 <img src="https://img.shields.io/github/repo-size/king-technologies/Project-Initiator?label=Repo%20Size&logo=Github&style=flat-square" alt="Project Initiator Repo Size"/>
 </a>
-<a href="https://discord.gg/CJU4UNTaFt" target="_blank" title="Join Community">
+<a href="https://discord.gg/CJU4UNTaFt" title="Join Community">
 <img src="https://img.shields.io/discord/737854816402800690?color=%236d82cb&label=Join%20Community&logo=discord&logoColor=%23FFFFFF&style=flat-square" alt="Join discord community for Project Initiator"/>
 </a>
 </p>
 
-<p align="center" title="Project Initiator gif"><img src="./assets/images/main.gif" alt="Project Initiator gif" /></p>
+<p align="center" title="Project Initiator"><img src="./assets/images/main.gif" alt="Project Initiator"/></p>
 
 <h2 align="center">🌐 Links 🌐</h2>
 <p align="center">
-    <a href="https://youtu.be/ud4P45zhCk0" target="_blank" title="Project Initiator using Python">🖥️ Video</a>
+    <a href="https://youtu.be/ud4P45zhCk0" title="Project Initiator using Python">🖥️ Video</a>
     ·
     <a href="https://github.com/king-technologies/Project-Initiator" title="Project Initiator">📂 Repo</a>
     ·
@@ -143,7 +143,7 @@ For creating an Organization Repo use this command and it will create an Organiz
 
 **Rohit Jain**
 
-- 🌌 [Profile](https://github.com/rohit19060 "Rohit Jain")
+- 🌌 [Profile](https://github.com/Rohit19060 "Rohit Jain")
 
 - 🏮 [Email](mailto:rohitjain19060@gmail.com?subject=Hi%20from%20Project%20Initiator "Hi!")
 
@@ -151,14 +151,14 @@ For creating an Organization Repo use this command and it will create an Organiz
 
 <h2 align="center">🤝 Support</h2>
 
-<h3 align="center">🎀 Contributions (<a href="https://guides.github.com/introduction/flow">GitHub flow</a>), 🔥 issues and 🥮 feature requests are most welcome!</h3>
+<h3 align="center">🎀 Contributions (<a href="https://guides.github.com/introduction/flow" title="GitHub flow">GitHub Flow</a>), 🔥 issues, and 🥮 feature requests are most welcome!</h3>
 
 <h3 align="center">💙 If you like this project, Give it a ⭐ and Share it with friends!</h3>
 <h3 align="center">💰 Donations Links</h3>
 <p align="center">
-<a href="https://www.paypal.me/kingrohitJ" target="_blank" title="PayPal"><img src="https://kingtechnologies.in/assets/images/paypal.png" alt="PayPal"/>
-<a href="https://www.buymeacoffee.com/rohitjain" target="Buy me a Coffee/" title="PayPal"><img src="https://kingtechnologies.in/assets/images/coffee.png" alt="Buy me a Coffee"/>
-<a href="https://ko-fi.com/rohitjain" target="_blank" title="Ko-fi"><img src="https://kingtechnologies.in/assets/images/kofi.png" alt="Ko-fi"/></a>
+<a href="https://www.paypal.me/kingrohitJ" title="PayPal"><img src="https://kingtechnologies.in/assets/images/paypal.png" alt="PayPal"/>
+<a href="https://www.buymeacoffee.com/rohitjain" title="PayPal"><img src="https://kingtechnologies.in/assets/images/coffee.png" alt="Buy me a Coffee"/>
+<a href="https://ko-fi.com/rohitjain" title="Ko-fi"><img src="https://kingtechnologies.in/assets/images/kofi.png" alt="Ko-fi"/></a>
 </p>
 
 <p align="center">Made with Python & ❤️ in India</p>

@@ -147,4 +147,3 @@ dist
 .yarn/unplugged
 .yarn-state.yml
 .yarn/install-state.gz
-.*
