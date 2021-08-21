@@ -137,7 +137,11 @@ For creating an Organization Repo use this command and it will create an Organiz
 
 - [ ] Add GUI
 
-- [ ] Add Other VCS
+- [ ] Add Screenshots Folder
+
+- [ ] Add Project to WorkSpaces
+
+- [ ] Add Documentations
 
 ## 🧑🏻 Author
 
