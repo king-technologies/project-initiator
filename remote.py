@@ -2,7 +2,10 @@ import sys
 import os
 import urllib.request
 import json
+from distutils.dir_util import copy_tree
 from random import randint
+import shutil
+from pathlib import Path
 
 
 projectsPath = "D:\\Projects\\"
@@ -10,17 +13,17 @@ workspacePath = "D:\\Work Spaces"
 repo = ""
 visibility = ""
 projectName = ""
+tempName = ""
 technology = ""
 workspaceName = ""
 emojis = [":crown:",
           ":man_technologist:", ":santa:", ":superhero:", ":unicorn:", ":lion:"]
 commands = ['git add .',
-            f'git commit -m "{emojis[randint(0, len(emojis)-1)]}"',
+            f'git commit -m "{emojis[randint(0, len(emojis)-1)]} Show Time!"',
             'git branch -M main']
 
 
 def connect():
-    # checking internet connection
     try:
         urllib.request.urlopen("https://kingtechnologies.in")
         return True
@@ -111,85 +114,83 @@ def addEntryToWorkspace():
         data = json_file.read()
         data = json.loads(data.replace("'", "\"").replace("\t", "").replace(
             "  ", "").replace("\n", "").replace(",}", "}").replace(",]", "]"))
-        data["folders"].append({"path": "..\\ProjectsX\\"+projectName})
+        data["folders"].append({"path": "..\\Projects\\"+projectName})
         tempList = sorted(
             list({v["path"]: v for v in data["folders"]}.values()), key=lambda k: k["path"])
         data["folders"] = tempList
     with open(workspaceName, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
+    os.startfile(workspacePath+'\\'+workspaceName)
 
 
-def localRepo(projectName=str(sys.argv[1])):
+def localRepo():
     _dir = projectsPath + '/' + projectName
     os.mkdir(_dir)
     os.chdir(_dir)
     os.system('git init')
 
 
-def globalRepo(projectName=str(sys.argv[1])):
+def globalRepo():
+    global projectName
     _dir = projectsPath + '/' + projectName
     os.chdir(projectsPath)
-    # try:
-    #     if repo == "global":
-    #         if visibility == "private":
-    #             os.system(f'gh repo create {projectName} --private -y')
-    #         else:
-    #             os.system(f'gh repo create {projectName} --public -y')
-    #     else:
-    #         if visibility == "private":
-    #             os.system(
-    #                 f'gh repo create king-technologies/{projectName} --private  -y')
-    #         else:
-    #             os.system(
-    #                 f'gh repo create king-technologies/{projectName} --public -y')
-    #     commands.append("git push -u origin main")
-    #     os.chdir(_dir)
-    # except:
-
-    #     x = input(
-    #         f'{projectName} Repo already exist Try another name or exit(y): ')
-    #     if (x.lower() == "y"):
-    #         exit("Exit")
-    #     elif (connect()):
-    #         projectName = x
-    #         globalRepo(projectName)
-    #     else:
-    #         y = input(
-    #             "No Internet Connection! Want to work locally (y) or exit: ")
-    #         if (y.lower() == "y"):
-    #             projectName = x
-    #             localRepo(x)
-    #         else:
-    #             exit("Exit")
-    os.mkdir(_dir)
-    os.chdir(_dir)
+    try:
+        if repo == "global":
+            if visibility == "private":
+                os.system(f'gh repo create {projectName} --private -y')
+            else:
+                os.system(f'gh repo create {projectName} --public -y')
+        else:
+            if visibility == "private":
+                os.system(
+                    f'gh repo create king-technologies/{projectName} --private  -y')
+            else:
+                os.system(
+                    f'gh repo create king-technologies/{projectName} --public -y')
+        commands.append("git push -u origin main")
+        os.chdir(_dir)
+    except:
+        x = input(
+            f'{projectName} Repo already exist Try another name or exit(y): ')
+        if (x.lower() == "y"):
+            exit("Exit")
+        elif (connect()):
+            projectName = x
+            globalRepo(projectName)
+        else:
+            y = input(
+                "No Internet Connection! Want to work locally (y) or exit: ")
+            if (y.lower() == "y"):
+                projectName = x
+                localRepo(x)
+            else:
+                exit("Exit")
 
 
 def createRepo():
     if repo == "local":
-        localRepo(projectName)
+        localRepo()
     else:
-        globalRepo(projectName)
+        globalRepo()
 
 
 def prepareProject():
     global projectName
     if(technology == "Flutter"):
-        projectName = projectName.lower()
+        projectName = tempName.lower().replace(" ", "_")
 
 
 def createProject():
     if technology == "Flutter":
-        # flutter()
-        print("Flutter")
+        flutter()
 
 
 def addUtilities():
     os.makedirs('assets/images')
-    description = input(f"Enter Description for {projectName}: ")
-    repoTitle = projectName.capitalize()
-    repoEmail = projectName.replace(" ", "%20")
-    with open("ReadMeTemplate.md", "r", encoding="utf-8") as f:
+    description = input(f"Enter Description for {tempName}: ")
+    repoTitle = tempName.capitalize()
+    repoEmail = tempName.capitalize().replace(" ", "%20")
+    with open("D:\Projects\Project-Initiator\ReadMeTemplate.md", "r", encoding="utf-8") as f:
         d = f.readlines()
 
     with open("README.md", "w", encoding="utf-8") as r:
@@ -205,10 +206,25 @@ def addUtilities():
             y = y.replace("<repo-title>", repoTitle)
             y = y.replace("<repo-email>", repoEmail)
             r.write(y)
+    src = "D:\Projects\Project-Initiator\Templates"
+    import subprocess
+    proc = subprocess.Popen(["cd"],
+                            stdout=subprocess.PIPE, shell=True)
+    (out, err) = proc.communicate()
+    dst = str(out).strip().replace("\\n", "").replace(
+        "b'", "").replace("'", "").replace("\\r", "")
+    if not os.path.exists(dst+"\\.github") and os.path.exists(src):
+        for item in os.listdir(src):
+            s = os.path.join(src, item)
+            d = os.path.join(dst, item)
+            if os.path.isdir(s):
+                shutil.copytree(s, d)
+            else:
+                shutil.copy(s, d)
 
 
 if len(sys.argv) <= 2:
-    projectName = str(sys.argv[1])
+    tempName = str(sys.argv[1])
     chooseRepoType()
     chooseVisibility()
     chooseTechnology()
@@ -219,4 +235,3 @@ if len(sys.argv) <= 2:
     for c in commands:
         os.system(c)
     addEntryToWorkspace()
-    os.system(workspaceName)

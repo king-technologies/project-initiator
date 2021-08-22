@@ -47,7 +47,7 @@ You are just one command away to start your next project
 
 - **Create Github Repo**
 
-- **Create Organisation Repo**
+- **Create Organization Repo**
 
 - **Open Project in [VSCode](https://code.visualstudio.com/ "VSCode")**
 
