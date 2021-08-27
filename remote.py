@@ -46,17 +46,13 @@ def nodejs():
 
 
 def python():
-    os.system("type nul > main.py")
-    print("Coming Soon...")
-    exit("Exiting...")
+    os.system("echo "" > main.py")
 
 
 def web():
-    os.system("type nul > index.html")
-    os.system("type nul > style.css")
-    os.system("type nul > script.js")
-    print("Coming Soon...")
-    exit("Exiting...")
+    os.system("echo "" > index.html")
+    os.system("echo "" > script.js")
+    os.system("echo "" > style.css")
 
 
 def react():
