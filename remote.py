@@ -1,12 +1,11 @@
-import sys
-import os
-import urllib.request
 import json
-from distutils.dir_util import copy_tree
-from random import randint
+import os
 import shutil
+import sys
+import urllib.request
+from distutils.dir_util import copy_tree
 from pathlib import Path
-
+from random import randint
 
 projectsPath = "D:\\Projects\\"
 workspacePath = "D:\\Work Spaces"
@@ -36,6 +35,71 @@ def flutter():
     os.system(f'flutter create .')
 
 
+def php():
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def nodejs():
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def python():
+    os.system("type nul > main.py")
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def web():
+    os.system("type nul > index.html")
+    os.system("type nul > style.css")
+    os.system("type nul > script.js")
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def react():
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def angular():
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def vue():
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def rust():
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def go():
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def laravel():
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def ci():
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+def net():
+    print("Coming Soon...")
+    exit("Exiting...")
+
+
+# Choose repo type i.e. Local, Global or Organization
 def chooseRepoType(x=0):
     global repo
     if(x == 0):
@@ -59,6 +123,7 @@ def chooseRepoType(x=0):
             chooseRepoType(y)
 
 
+# Choose repo visibility i.e. private or public
 def chooseVisibility(x=0):
     global visibility
     if repo == "global" or repo == "organization":
@@ -80,22 +145,50 @@ def chooseVisibility(x=0):
                 chooseVisibility(y)
 
 
+# Choose Technology by Their respective number
 def chooseTechnology():
     global technology
     print('''Choose Technology:
     1. Flutter
     2. PHP
-    3. Node
+    3. NodeJS
     4. Python
     5. Basic Web
     6. React
     7. Angular
     8. Vue
     9. Rust
-    10. Go'''.replace("  ", "").replace("\n", "\n\t"))
+    10. Go
+    11. Laravel
+    12. CodeIgniter
+    13. .Net'''.replace("  ", "").replace("\n", "\n\t"))
     x = input("Technology: ")
     if x == "1":
         technology = "Flutter"
+    elif x == "2":
+        technology = "PHP"
+    elif x == "3":
+        technology = "NodeJS"
+    elif x == "4":
+        technology = "Python"
+    elif x == "5":
+        technology = "Basic Web"
+    elif x == "6":
+        technology = "React"
+    elif x == "7":
+        technology = "Angular"
+    elif x == "8":
+        technology = "Vue"
+    elif x == "9":
+        technology = "Rust"
+    elif x == "10":
+        technology = "Go"
+    elif x == "11":
+        technology = "Laravel"
+    elif x == "12":
+        technology = "CodeIgniter"
+    elif x == "13":
+        technology = ".Net"
     else:
         y = input(
             "Wrong Input, Wanna Try again! or Exit(y/Y): ")
@@ -105,10 +198,38 @@ def chooseTechnology():
             chooseVisibility(y)
 
 
+# Add Entry to Workspace and Open it
 def addEntryToWorkspace():
     global workspaceName
     if technology == "Flutter":
         workspaceName = 'Flutter.code-workspace'
+    elif technology == "PHP":
+        workspaceName = 'Php.code-workspace'
+    elif technology == "NodeJS":
+        workspaceName = 'NodeJS.code-workspace'
+    elif technology == "Python":
+        workspaceName = 'Python.code-workspace'
+    elif technology == "Basic Web":
+        workspaceName = 'Web.code-workspace'
+    elif technology == "React":
+        workspaceName = 'React.code-workspace'
+    elif technology == "Angular":
+        workspaceName = 'Angular.code-workspace'
+    elif technology == "Vue":
+        workspaceName = 'Vue.code-workspace'
+    elif technology == "Rust":
+        workspaceName = 'Rust.code-workspace'
+    elif technology == "Go":
+        workspaceName = 'Go.code-workspace'
+    elif technology == "Laravel":
+        workspaceName = 'Php.code-workspace'
+    elif technology == "CodeIgniter":
+        workspaceName = 'Php.code-workspace'
+    elif technology == ".Net":
+        workspaceName = 'Net.code-workspace'
+    else:
+        print("Workspace Not Found")
+        exit("Exiting...")
     os.chdir(workspacePath)
     with open(workspaceName) as json_file:
         data = json_file.read()
@@ -123,6 +244,7 @@ def addEntryToWorkspace():
     os.startfile(workspacePath+'\\'+workspaceName)
 
 
+# Create Local Repo
 def localRepo():
     _dir = projectsPath + '/' + projectName
     os.mkdir(_dir)
@@ -130,6 +252,7 @@ def localRepo():
     os.system('git init')
 
 
+# Create Global Repo or Organization Repo
 def globalRepo():
     global projectName
     _dir = projectsPath + '/' + projectName
@@ -167,6 +290,7 @@ def globalRepo():
                 exit("Exit")
 
 
+# Create Repo local or global based on choice
 def createRepo():
     if repo == "local":
         localRepo()
@@ -174,20 +298,77 @@ def createRepo():
         globalRepo()
 
 
+# Naming Scheme according to the language
 def prepareProject():
     global projectName
-    if(technology == "Flutter"):
+    if technology == "Flutter":
         projectName = tempName.lower().replace(" ", "_")
+    elif technology == "PHP":
+        projectName = tempName.replace(" ", "_")
+    elif technology == "NodeJS":
+        projectName = tempName.lower().replace(" ", "_")
+    elif technology == "Python":
+        projectName = tempName.replace(" ", "_")
+    elif technology == "Basic Web":
+        projectName = tempName.replace(" ", "_")
+    elif technology == "React":
+        projectName = tempName.lower().replace(" ", "_")
+    elif technology == "Angular":
+        projectName = tempName.lower().replace(" ", "_")
+    elif technology == "Vue":
+        projectName = tempName.lower().replace(" ", "_")
+    elif technology == "Rust":
+        projectName = tempName.replace(" ", "_")
+    elif technology == "Go":
+        projectName = tempName.replace(" ", "_")
+    elif technology == "Laravel":
+        projectName = tempName.replace(" ", "_")
+    elif technology == "CodeIgniter":
+        projectName = tempName.replace(" ", "_")
+    elif technology == ".Net":
+        projectName = tempName.replace(" ", "_")
+    else:
+        exit("Wrong Technology")
 
 
+# Call the respective function based on choice
 def createProject():
     if technology == "Flutter":
         flutter()
+    elif technology == "PHP":
+        php()
+    elif technology == "NodeJS":
+        nodejs()
+    elif technology == "Python":
+        python()
+    elif technology == "Basic Web":
+        web()
+    elif technology == "React":
+        react()
+    elif technology == "Angular":
+        angular()
+    elif technology == "Vue":
+        vue()
+    elif technology == "Rust":
+        rust()
+    elif technology == "Go":
+        go()
+    elif technology == "Laravel":
+        laravel()
+    elif technology == "CodeIgniter":
+        ci()
+    elif technology == ".Net":
+        net()
+    else:
+        print("Wrong Technology")
+        exit("Exiting...")
 
 
+# Add images folder, Readme File and Github Templates
 def addUtilities():
     os.makedirs('assets/images')
-    description = input(f"Enter Description for {tempName}: ")
+    # description = input(f"Enter Description for {tempName}: ")
+    description = ""
     repoTitle = tempName.capitalize()
     repoEmail = tempName.capitalize().replace(" ", "%20")
     with open("D:\Projects\Project-Initiator\ReadMeTemplate.md", "r", encoding="utf-8") as f:
