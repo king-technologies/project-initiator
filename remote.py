@@ -31,13 +31,13 @@ def connect():
 
 
 def flutter():
-    os.system(f'flutter upgrade')
-    os.system(f'flutter create .')
+    os.system(f'flutter create {projectName}')
 
 
 def php():
-    print("Coming Soon...")
-    exit("Exiting...")
+    os.mkdir(projectName)
+    os.system(f"echo "" > {projectName}\index.php")
+    os.system("composer self-update")
 
 
 def nodejs():
@@ -50,9 +50,10 @@ def python():
 
 
 def web():
-    os.system("echo "" > index.html")
-    os.system("echo "" > script.js")
-    os.system("echo "" > style.css")
+    os.mkdir(projectName)
+    os.system(f"echo "" > {projectName}\index.html")
+    os.system(f"echo "" > {projectName}\script.js")
+    os.system(f"echo "" > {projectName}\style.css")
 
 
 def react():
@@ -81,11 +82,12 @@ def go():
 
 
 def laravel():
-    print("Coming Soon...")
-    exit("Exiting...")
+    os.system("composer self-update")
+    os.system(f"composer create-project laravel/laravel {projectName}")
 
 
 def ci():
+    os.system("composer self-update")
     print("Coming Soon...")
     exit("Exiting...")
 
@@ -243,7 +245,6 @@ def addEntryToWorkspace():
 # Create Local Repo
 def localRepo():
     _dir = projectsPath + '/' + projectName
-    os.mkdir(_dir)
     os.chdir(_dir)
     os.system('git init')
 
@@ -252,7 +253,6 @@ def localRepo():
 def globalRepo():
     global projectName
     _dir = projectsPath + '/' + projectName
-    os.chdir(projectsPath)
     try:
         if repo == "global":
             if visibility == "private":
@@ -297,6 +297,7 @@ def createRepo():
 # Naming Scheme according to the language
 def prepareProject():
     global projectName
+    os.chdir(projectsPath)
     if technology == "Flutter":
         projectName = tempName.lower().replace(" ", "_")
     elif technology == "PHP":
@@ -318,9 +319,9 @@ def prepareProject():
     elif technology == "Go":
         projectName = tempName.replace(" ", "_")
     elif technology == "Laravel":
-        projectName = tempName.replace(" ", "_")
+        projectName = tempName.replace(" ", "-").title()
     elif technology == "CodeIgniter":
-        projectName = tempName.replace(" ", "_")
+        projectName = tempName.replace(" ", "-").title()
     elif technology == ".Net":
         projectName = tempName.replace(" ", "_")
     else:
@@ -330,7 +331,10 @@ def prepareProject():
 # Call the respective function based on choice
 def createProject():
     if technology == "Flutter":
+        os.system(f'flutter upgrade')
         flutter()
+        commands.append("flutter pub upgrade")
+        commands.append("flutter pub outdated")
     elif technology == "PHP":
         php()
     elif technology == "NodeJS":
@@ -351,6 +355,7 @@ def createProject():
         go()
     elif technology == "Laravel":
         laravel()
+        commands.append("composer update")
     elif technology == "CodeIgniter":
         ci()
     elif technology == ".Net":
@@ -406,8 +411,8 @@ if len(sys.argv) <= 2:
     chooseVisibility()
     chooseTechnology()
     prepareProject()
-    createRepo()
     createProject()
+    createRepo()
     addUtilities()
     for c in commands:
         os.system(c)
