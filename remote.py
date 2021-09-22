@@ -46,7 +46,7 @@ def nodejs():
 
 
 def python():
-    os.system("echo "" > main.py")
+    os.system("echo "" > {projectName}\main.py")
 
 
 def web():
