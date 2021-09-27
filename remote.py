@@ -405,15 +405,19 @@ def addUtilities():
                 shutil.copy(s, d)
 
 
-if len(sys.argv) <= 2:
-    tempName = str(sys.argv[1])
+# Check for the sys argument have -y or not
+if "-y" in sys.argv:
+    repo = "global"
+    visibility = "public"
+else:
     chooseRepoType()
     chooseVisibility()
-    chooseTechnology()
-    prepareProject()
-    createProject()
-    createRepo()
-    addUtilities()
-    for c in commands:
-        os.system(c)
-    addEntryToWorkspace()
+tempName = str(sys.argv[1])
+chooseTechnology()
+prepareProject()
+createProject()
+createRepo()
+addUtilities()
+for c in commands:
+    os.system(c)
+addEntryToWorkspace()
