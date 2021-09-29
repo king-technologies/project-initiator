@@ -15,8 +15,7 @@ projectName = ""
 tempName = ""
 technology = ""
 workspaceName = ""
-emojis = [":crown:",
-          ":man_technologist:", ":santa:", ":superhero:", ":unicorn:", ":lion:"]
+emojis = [":crown:",           ":santa:", ":superhero:", ":unicorn:", ":lion:"]
 commands = ['git add .',
             f'git commit -m "{emojis[randint(0, len(emojis)-1)]} Show Time!"',
             'git branch -M main']
@@ -41,8 +40,10 @@ def php():
 
 
 def nodejs():
-    print("Coming Soon...")
-    exit("Exiting...")
+    os.mkdir(projectName)
+    os.system(f"cd {projectName}")
+    os.system("npm init -y")
+    os.system("cd ..")
 
 
 def python():
