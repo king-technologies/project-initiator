@@ -15,7 +15,7 @@ projectName = ""
 tempName = ""
 technology = ""
 workspaceName = ""
-emojis = [":crown:",           ":santa:", ":superhero:", ":unicorn:", ":lion:"]
+emojis = [":crown:", ":santa:", ":superhero:", ":unicorn:", ":lion:"]
 commands = ['git add .',
             f'git commit -m "{emojis[randint(0, len(emojis)-1)]} Show Time!"',
             'git branch -M main']
@@ -30,31 +30,39 @@ def connect():
 
 
 def flutter():
+    # Working Fine
     os.system(f'flutter create {projectName}')
 
 
 def php():
     os.mkdir(projectName)
-    os.system(f"echo "" > {projectName}\index.php")
+    os.chdir(projectName)
+    open("index.php", "w")
     os.system("composer self-update")
+    os.chdir(projectsPath)
 
 
 def nodejs():
     os.mkdir(projectName)
-    os.system(f"cd {projectName}")
+    os.chdir(projectName)
     os.system("npm init -y")
-    os.system("cd ..")
+    os.chdir(projectsPath)
 
 
 def python():
-    os.system("echo "" > {projectName}\main.py")
+    os.mkdir(projectName)
+    os.chdir(projectName)
+    open("main.py", "w")
+    os.chdir(projectsPath)
 
 
 def web():
     os.mkdir(projectName)
-    os.system(f"echo "" > {projectName}\index.html")
-    os.system(f"echo "" > {projectName}\script.js")
-    os.system(f"echo "" > {projectName}\style.css")
+    os.chdir(projectName)
+    open("index.html", "w")
+    open("style.css", "w")
+    open("script.js", "w")
+    os.chdir(projectsPath)
 
 
 def react():
@@ -83,6 +91,7 @@ def go():
 
 
 def laravel():
+    # Working Fine
     os.system("composer self-update")
     os.system(f"composer create-project laravel/laravel {projectName}")
 
