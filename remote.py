@@ -31,7 +31,7 @@ def connect():
 
 def flutter():
     # Working Fine
-    os.system(f'flutter create {projectName}')
+    os.system(f'flutter create {projectName} --org dev.kingtechnologies')
 
 
 def php():
