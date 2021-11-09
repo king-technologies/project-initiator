@@ -341,7 +341,7 @@ def prepareProject():
 # Call the respective function based on choice
 def createProject():
     if technology == "Flutter":
-        os.system(f'flutter upgrade')
+        os.system(f'flutter upgrade -f')
         flutter()
         commands.append("flutter pub upgrade")
         commands.append("flutter pub outdated")
