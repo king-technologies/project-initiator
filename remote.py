@@ -3,8 +3,6 @@ import os
 import shutil
 import sys
 import urllib.request
-from distutils.dir_util import copy_tree
-from pathlib import Path
 from random import randint
 
 projectsPath = "D:\\Projects\\"
@@ -12,6 +10,7 @@ workspacePath = "D:\\Work Spaces"
 repo = ""
 visibility = ""
 projectName = ""
+description = ""
 tempName = ""
 technology = ""
 workspaceName = ""
@@ -262,20 +261,28 @@ def localRepo():
 # Create Global Repo or Organization Repo
 def globalRepo():
     global projectName
+    global technology
+    global description
     _dir = projectsPath + '/' + projectName
+    description = input(f"Enter Description for {tempName}: ")
     try:
+        os.chdir(_dir)
+        os.system('git init')
+        os.chdir(projectsPath)
         if repo == "global":
             if visibility == "private":
-                os.system(f'gh repo create {projectName} --private -y')
+                os.system(
+                    f'gh repo create {projectName} --private --description="{description}" --homepage="https://kingtechnologies.in/" -s {projectName}')
             else:
-                os.system(f'gh repo create {projectName} --public -y')
+                os.system(
+                    f'gh repo create {projectName} --public --description="{description} Project" --homepage="https://kingtechnologies.in/" -s {projectName}')
         else:
             if visibility == "private":
                 os.system(
-                    f'gh repo create king-technologies/{projectName} --private  -y')
+                    f'gh repo create king-technologies/{projectName} --private --description="{technology} Project" --homepage="https://kingtechnologies.in/" -s {projectName}')
             else:
                 os.system(
-                    f'gh repo create king-technologies/{projectName} --public -y')
+                    f'gh repo create king-technologies/{projectName} --public --description="{technology} Project" --homepage="https://kingtechnologies.in/" -s {projectName}')
         commands.append("git push -u origin main")
         os.chdir(_dir)
     except:
@@ -309,31 +316,31 @@ def prepareProject():
     global projectName
     os.chdir(projectsPath)
     if technology == "Flutter":
-        projectName = tempName.lower().replace(" ", "_")
+        projectName = tempName.lower()
     elif technology == "PHP":
-        projectName = tempName.replace(" ", "_")
+        projectName = tempName
     elif technology == "NodeJS":
-        projectName = tempName.lower().replace(" ", "_")
+        projectName = tempName.lower()
     elif technology == "Python":
-        projectName = tempName.replace(" ", "_")
+        projectName = tempName
     elif technology == "Basic Web":
-        projectName = tempName.replace(" ", "_")
+        projectName = tempName
     elif technology == "React":
-        projectName = tempName.lower().replace(" ", "_")
+        projectName = tempName.lower()
     elif technology == "Angular":
-        projectName = tempName.lower().replace(" ", "_")
+        projectName = tempName.lower()
     elif technology == "Vue":
-        projectName = tempName.lower().replace(" ", "_")
+        projectName = tempName.lower()
     elif technology == "Rust":
-        projectName = tempName.replace(" ", "_")
+        projectName = tempName
     elif technology == "Go":
-        projectName = tempName.replace(" ", "_")
+        projectName = tempName
     elif technology == "Laravel":
-        projectName = tempName.replace(" ", "-").title()
+        projectName = tempName.title()
     elif technology == "CodeIgniter":
-        projectName = tempName.replace(" ", "-").title()
+        projectName = tempName.title()
     elif technology == ".Net":
-        projectName = tempName.replace(" ", "_")
+        projectName = tempName
     else:
         exit("Wrong Technology")
 
@@ -343,8 +350,6 @@ def createProject():
     if technology == "Flutter":
         os.system(f'flutter upgrade -f')
         flutter()
-        commands.append("flutter pub upgrade")
-        commands.append("flutter pub outdated")
     elif technology == "PHP":
         php()
     elif technology == "NodeJS":
@@ -371,20 +376,16 @@ def createProject():
     elif technology == ".Net":
         net()
     else:
-        print("Wrong Technology")
         exit("Exiting...")
 
 
 # Add images folder, Readme File and Github Templates
 def addUtilities():
     os.makedirs('assets/images')
-    # description = input(f"Enter Description for {tempName}: ")
-    description = ""
     repoTitle = tempName.capitalize()
     repoEmail = tempName.capitalize().replace(" ", "%20")
     with open("D:\Projects\Project-Initiator\ReadMeTemplate.md", "r", encoding="utf-8") as f:
         d = f.readlines()
-
     with open("README.md", "w", encoding="utf-8") as r:
         for i in d:
             y = i
