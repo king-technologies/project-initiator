@@ -242,10 +242,7 @@ def addEntryToWorkspace():
         data = json_file.read()
         data = json.loads(data.replace("'", "\"").replace("\t", "").replace(
             "  ", "").replace("\n", "").replace(",}", "}").replace(",]", "]"))
-        data["folders"].append({"path": "..\\Projects\\"+projectName})
-        tempList = sorted(
-            list({v["path"]: v for v in data["folders"]}.values()), key=lambda k: k["path"])
-        data["folders"] = tempList
+        data["folders"].insert(0, {"path": "..\\Projects\\"+projectName})
     with open(workspaceName, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     os.startfile(workspacePath+'\\'+workspaceName)
