@@ -213,7 +213,7 @@ def addEntryToWorkspace():
     elif technology == "PHP":
         workspaceName = 'Php.code-workspace'
     elif technology == "NodeJS":
-        workspaceName = 'NodeJS.code-workspace'
+        workspaceName = 'Node.code-workspace'
     elif technology == "Python":
         workspaceName = 'Python.code-workspace'
     elif technology == "Basic Web":
