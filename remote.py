@@ -238,7 +238,7 @@ def addEntryToWorkspace():
         print("Workspace Not Found")
         exit("Exiting...")
     os.chdir(workspacePath)
-    with open(workspaceName) as json_file:
+    with open(workspaceName, 'r', encoding="utf-8") as json_file:
         data = json_file.read()
         data = json.loads(data.replace("'", "\"").replace("\t", "").replace(
             "  ", "").replace("\n", "").replace(",}", "}").replace(",]", "]"))
