@@ -103,21 +103,11 @@ Either run this command in the project folder or set the path of `create.bat` in
 create <project_name>
 ```
 
-For creating Local Repo use this command and it will create a local repository in the path provided.
+For creating global public repo use this command
 
 ```Bash
-create <project_name> -g
+create <project_name> -y
 ```
-
-For creating a Global Repo use this command and it will create a global repository on your GitHub profile using `gh` and make & push the initial commit.
-
-```Bash
-create <project_name> -o
-```
-
-For creating an Organization Repo use this command and it will create an Organization repository on your GitHub profile using `gh` and make & push the initial commit
-
-> If you pass any other option like `-pr` then the repo will be private otherwise it will be public
 
 ## 👷 Built with
 
@@ -143,11 +133,9 @@ For creating an Organization Repo use this command and it will create an Organiz
 
 - [ ] Add GUI
 
-- [x] Add Screenshots Folder
-
-- [x] Add Project to WorkSpaces
-
 - [ ] Add Documentations
+
+- [ ] Add More Commands
 
 ## 🧑🏻 Author
 
