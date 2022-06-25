@@ -29,7 +29,6 @@ def connect():
 
 
 def flutter():
-    # Working Fine
     os.system(f'flutter create {projectName} --org dev.kingtechnologies')
 
 
@@ -65,13 +64,15 @@ def web():
 
 
 def react():
-    print("Coming Soon...")
-    exit("Exiting...")
+    os.mkdir(projectName)
+    os.chdir(projectName)
+    os.system("npx create-react-app .")
+    os.chdir(projectsPath)
 
 
 def angular():
-    print("Coming Soon...")
-    exit("Exiting...")
+    os.system(f"ng new {projectName} -g --strict")
+    os.chdir(projectsPath)
 
 
 def vue():
@@ -276,10 +277,10 @@ def globalRepo():
         else:
             if visibility == "private":
                 os.system(
-                    f'gh repo create king-technologies/{projectName} --private --description="{technology} Project" --homepage="https://kingtechnologies.in/" -s {projectName}')
+                    f'gh repo create king-technologies/{projectName} --private --description="{description}" --homepage="https://kingtechnologies.in/" -s {projectName}')
             else:
                 os.system(
-                    f'gh repo create king-technologies/{projectName} --public --description="{technology} Project" --homepage="https://kingtechnologies.in/" -s {projectName}')
+                    f'gh repo create king-technologies/{projectName} --public --description="{description}" --homepage="https://kingtechnologies.in/" -s {projectName}')
         commands.append("git push -u origin main")
         os.chdir(_dir)
     except:
