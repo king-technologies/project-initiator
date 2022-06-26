@@ -76,8 +76,11 @@ def angular():
 
 
 def vue():
-    print("Coming Soon...")
-    exit("Exiting...")
+    os.chdir(projectsPath)
+    os.system("npm init vue@latest")
+    os.chdir(projectName)
+    os.system("npm i")
+    os.chdir(projectsPath)
 
 
 def rust():
