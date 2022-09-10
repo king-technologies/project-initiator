@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/<repo-owner>/<repo-name>" title="<repo-title>">
-    <img src="https://kingtechnologies.in/assets/images/Logo.webp" width="80px" alt="<repo-title>"/>
+    <img src="https://kingtechnologies.dev/assets/images/Logo.webp" width="80px" alt="<repo-title>"/>
   </a>
 </p>
 <h1 align="center">🌟 <repo-title> 🌟</h1>
@@ -74,7 +74,7 @@ git clone https://github.com/<repo-owner>/<repo-name>.git
 
 - 🏮 [Email](mailto:rohitjain19060@gmail.com?subject=Hi%20from%20<repo-email> "Hi!")
 
-- 🦁 [Website](https://kingtechnologies.in "Welcome")
+- 🦁 [Website](https://kingtechnologies.dev "Welcome")
 
 <h2 align="center">🤝 Support</h2>
 
@@ -83,10 +83,10 @@ git clone https://github.com/<repo-owner>/<repo-name>.git
 <p align="center">💙 If you like this project, Give it a ⭐ and Share it with friends!</p>
 <p align="center">💰 Donations Links</p>
 <p align="center">
-<a href="https://www.paypal.me/kingrohitJ" title="PayPal"><img src="https://kingtechnologies.in/assets/images/Paypal.png" alt="PayPal"/></a>
-<a href="https://www.buymeacoffee.com/rohitjain" title="Buy me a Coffee"><img src="https://kingtechnologies.in/assets/images/Coffee.png" alt="Buy me a Coffee"/></a>
-<a href="https://ko-fi.com/rohitjain" title="Ko-fi"><img src="https://kingtechnologies.in/assets/images/Kofi.png" alt="Ko-fi"/></a>
-<a href="https://www.patreon.com/KingTechnologies" title="Patreon"><img src="https://kingtechnologies.in/assets/images/Patreon.png" alt="Patreon"/></a>
+<a href="https://www.paypal.me/kingrohitJ" title="PayPal"><img src="https://kingtechnologies.dev/assets/images/Paypal.png" alt="PayPal"/></a>
+<a href="https://www.buymeacoffee.com/rohitjain" title="Buy me a Coffee"><img src="https://kingtechnologies.dev/assets/images/Coffee.png" alt="Buy me a Coffee"/></a>
+<a href="https://ko-fi.com/rohitjain" title="Ko-fi"><img src="https://kingtechnologies.dev/assets/images/Kofi.png" alt="Ko-fi"/></a>
+<a href="https://www.patreon.com/KingTechnologies" title="Patreon"><img src="https://kingtechnologies.dev/assets/images/Patreon.png" alt="Patreon"/></a>
 </p>
 
 <p align="center">Made with <repo-lang> & ❤️ in India</p>
