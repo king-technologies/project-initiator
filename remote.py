@@ -22,7 +22,7 @@ commands = ['git add .',
 
 def connect():
     try:
-        urllib.request.urlopen("https://kingtechnologies.in")
+        urllib.request.urlopen("https://kingtechnologies.dev")
         return True
     except:
         return False
@@ -246,7 +246,7 @@ def addEntryToWorkspace():
         data = json_file.read()
         data = json.loads(data.replace("'", "\"").replace("\t", "").replace(
             "  ", "").replace("\n", "").replace(",}", "}").replace(",]", "]"))
-        data["folders"].insert(0, {"path": "..\\Projects\\"+projectName})
+        data["folders"].insert(0, {"path": "../Projects/"+projectName})
     with open(workspaceName, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     os.startfile(workspacePath+'\\'+workspaceName)
@@ -273,17 +273,17 @@ def globalRepo():
         if repo == "global":
             if visibility == "private":
                 os.system(
-                    f'gh repo create {projectName} --private --description="{description}" --homepage="https://kingtechnologies.in/" -s {projectName}')
+                    f'gh repo create {projectName} --private --description="{description}" --homepage="https://kingtechnologies.dev/" -s {projectName}')
             else:
                 os.system(
-                    f'gh repo create {projectName} --public --description="{description} Project" --homepage="https://kingtechnologies.in/" -s {projectName}')
+                    f'gh repo create {projectName} --public --description="{description} Project" --homepage="https://kingtechnologies.dev/" -s {projectName}')
         else:
             if visibility == "private":
                 os.system(
-                    f'gh repo create king-technologies/{projectName} --private --description="{description}" --homepage="https://kingtechnologies.in/" -s {projectName}')
+                    f'gh repo create king-technologies/{projectName} --private --description="{description}" --homepage="https://kingtechnologies.dev/" -s {projectName}')
             else:
                 os.system(
-                    f'gh repo create king-technologies/{projectName} --public --description="{description}" --homepage="https://kingtechnologies.in/" -s {projectName}')
+                    f'gh repo create king-technologies/{projectName} --public --description="{description}" --homepage="https://kingtechnologies.dev/" -s {projectName}')
         commands.append("git push -u origin main")
         os.chdir(_dir)
     except:
