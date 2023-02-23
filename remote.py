@@ -6,7 +6,6 @@ import urllib.request
 from random import randint
 
 projectsPath = "D:\\Projects\\"
-workspacePath = "D:\\Work Spaces"
 repo = ""
 visibility = ""
 projectName = ""
@@ -94,7 +93,6 @@ def go():
 
 
 def laravel():
-    # Working Fine
     os.system("composer self-update")
     os.system(f"composer create-project laravel/laravel {projectName}")
 
@@ -113,7 +111,7 @@ def net():
 # Choose repo type i.e. Local, Global or Organization
 def chooseRepoType(x=0):
     global repo
-    if(x == 0):
+    if (x == 0):
         print('''Choose Repository Type:
         1. Local Repository
         2. Global Repository
@@ -213,35 +211,34 @@ def chooseTechnology():
 def addEntryToWorkspace():
     global workspaceName
     if technology == "Flutter":
-        workspaceName = 'Flutter.code-workspace'
+        workspaceName = 'flutter.code-workspace'
     elif technology == "PHP":
-        workspaceName = 'Php.code-workspace'
+        workspaceName = 'pro_php.code-workspace'
     elif technology == "NodeJS":
-        workspaceName = 'Node.code-workspace'
+        workspaceName = 'node.code-workspace'
     elif technology == "Python":
         workspaceName = 'Python.code-workspace'
     elif technology == "Basic Web":
-        workspaceName = 'Web.code-workspace'
+        workspaceName = 'web.code-workspace'
     elif technology == "React":
-        workspaceName = 'React.code-workspace'
+        workspaceName = 'react.code-workspace'
     elif technology == "Angular":
-        workspaceName = 'Angular.code-workspace'
+        workspaceName = 'angular.code-workspace'
     elif technology == "Vue":
-        workspaceName = 'Vue.code-workspace'
+        workspaceName = 'vue.code-workspace'
     elif technology == "Rust":
-        workspaceName = 'Rust.code-workspace'
+        workspaceName = 'rust.code-workspace'
     elif technology == "Go":
-        workspaceName = 'Go.code-workspace'
+        workspaceName = 'go.code-workspace'
     elif technology == "Laravel":
-        workspaceName = 'Php.code-workspace'
+        workspaceName = 'pro_php.code-workspace'
     elif technology == "CodeIgniter":
-        workspaceName = 'Php.code-workspace'
+        workspaceName = 'pro_php.code-workspace'
     elif technology == ".Net":
         workspaceName = 'Net.code-workspace'
     else:
-        print("Workspace Not Found")
         exit("Exiting...")
-    os.chdir(workspacePath)
+    os.chdir(projectsPath)
     with open(workspaceName, 'r', encoding="utf-8") as json_file:
         data = json_file.read()
         data = json.loads(data.replace("'", "\"").replace("\t", "").replace(
@@ -249,7 +246,7 @@ def addEntryToWorkspace():
         data["folders"].insert(0, {"path": "../Projects/"+projectName})
     with open(workspaceName, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-    os.startfile(workspacePath+'\\'+workspaceName)
+    os.startfile(projectsPath+'\\'+workspaceName)
 
 
 # Create Local Repo
@@ -380,12 +377,12 @@ def createProject():
         exit("Exiting...")
 
 
-# Add images folder, Readme File and Github Templates
+# Add images folder, Readme File and GitHub Templates
 def addUtilities():
     os.makedirs('assets/images')
     repoTitle = tempName.capitalize()
     repoEmail = tempName.capitalize().replace(" ", "%20")
-    with open("D:\Projects\Project-Initiator\ReadMeTemplate.md", "r", encoding="utf-8") as f:
+    with open("D:\Projects\project-Initiator\ReadMeTemplate.md", "r", encoding="utf-8") as f:
         d = f.readlines()
     with open("README.md", "w", encoding="utf-8") as r:
         for i in d:
@@ -400,7 +397,7 @@ def addUtilities():
             y = y.replace("<repo-title>", repoTitle)
             y = y.replace("<repo-email>", repoEmail)
             r.write(y)
-    src = "D:\Projects\Project-Initiator\Templates"
+    src = "D:\Projects\project-Initiator\Templates"
     import subprocess
     proc = subprocess.Popen(["cd"],
                             stdout=subprocess.PIPE, shell=True)
