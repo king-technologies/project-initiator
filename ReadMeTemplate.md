@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/<repo-owner>/<repo-name>" title="<repo-title>">
-    <img src="https://kingtechnologies.dev/assets/images/Logo.webp" width="80px" alt="<repo-title>"/>
+    <img src="https://raw.githubusercontent.com/king-technologies/developer-utilities/main/images/king_tech.png" width="80px" alt="<repo-title>"/>
   </a>
 </p>
 <h1 align="center">🌟 <repo-title> 🌟</h1>
@@ -80,10 +80,10 @@ git clone https://github.com/<repo-owner>/<repo-name>.git
 <p align="center">💙 If you like this project, Give it a ⭐ and Share it with friends!</p>
 <p align="center">💰 Donations Links</p>
 <p align="center">
-<a href="https://www.paypal.me/kingrohitJ" title="PayPal"><img src="https://kingtechnologies.dev/assets/images/Paypal.png" alt="PayPal"/></a>
-<a href="https://www.buymeacoffee.com/rohitjain" title="Buy me a Coffee"><img src="https://kingtechnologies.dev/assets/images/Coffee.png" alt="Buy me a Coffee"/></a>
-<a href="https://ko-fi.com/rohitjain" title="Ko-fi"><img src="https://kingtechnologies.dev/assets/images/Kofi.png" alt="Ko-fi"/></a>
-<a href="https://www.patreon.com/KingTechnologies" title="Patreon"><img src="https://kingtechnologies.dev/assets/images/Patreon.png" alt="Patreon"/></a>
+<a href="https://www.paypal.me/kingrohitJ" title="PayPal"><img src="https://raw.githubusercontent.com/king-technologies/developer-utilities/main/images/paypal.png" alt="PayPal"/></a>
+<a href="https://www.buymeacoffee.com/rohitjain" title="Buy me a Coffee"><img src="https://raw.githubusercontent.com/king-technologies/developer-utilities/main/images/coffee.png" alt="Buy me a Coffee"/></a>
+<a href="https://ko-fi.com/rohitjain" title="Ko-fi"><img src="https://raw.githubusercontent.com/king-technologies/developer-utilities/main/images/kofi.png" alt="Ko-fi"/></a>
+<a href="https://www.patreon.com/KingTechnologies" title="Patreon"><img src="https://raw.githubusercontent.com/king-technologies/developer-utilities/main/images/patreon.png" alt="Patreon"/></a>
 </p>
 
 <p align="center">Made with <repo-lang> & ❤️ in India</p>

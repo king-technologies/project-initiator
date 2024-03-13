@@ -14,21 +14,23 @@ tempName = ""
 technology = ""
 workspaceName = ""
 emojis = [":crown:", ":santa:", ":superhero:", ":unicorn:", ":lion:"]
-commands = ['git add .',
-            f'git commit -m "{emojis[randint(0, len(emojis)-1)]} Show Time!"',
-            'git branch -M main']
+commands = [
+    "git add .",
+    f'git commit -m "{emojis[randint(0, len(emojis)-1)]} Show Time!"',
+    "git branch -M main",
+]
 
 
 def connect():
     try:
         urllib.request.urlopen("https://kingtechnologies.dev")
         return True
-    except:
+    except urllib.error.URLError:
         return False
 
 
 def flutter():
-    os.system(f'flutter create {projectName} --org dev.kingtechnologies')
+    os.system(f"flutter create {projectName} --org dev.kingtechnologies")
 
 
 def php():
@@ -111,11 +113,17 @@ def net():
 # Choose repo type i.e. Local, Global or Organization
 def chooseRepoType(x=0):
     global repo
-    if (x == 0):
-        print('''Choose Repository Type:
+    if x == 0:
+        print(
+            """Choose Repository Type:
         1. Local Repository
         2. Global Repository
-        3. Organization Repository'''.replace("  ", "").replace("\n", "\n\t"))
+        3. Organization Repository""".replace(
+                "  ", ""
+            ).replace(
+                "\n", "\n\t"
+            )
+        )
         x = input("Repository Type: ")
     if x == "1":
         repo = "local"
@@ -124,9 +132,8 @@ def chooseRepoType(x=0):
     elif x == "3":
         repo = "organization"
     else:
-        y = input(
-            "Wrong Input, Wanna Try again! or Exit(y/Y): ")
-        if (y.lower() == "y"):
+        y = input("Wrong Input, Wanna Try again! or Exit(y/Y): ")
+        if y.lower() == "y":
             exit("Exiting...")
         else:
             chooseRepoType(y)
@@ -137,18 +144,23 @@ def chooseVisibility(x=0):
     global visibility
     if repo == "global" or repo == "organization":
         if x == 0:
-            print('''Choose Project Visibility:
+            print(
+                """Choose Project Visibility:
                 1. Public
-                2. Private'''.replace("  ", "").replace("\n", "\n\t"))
+                2. Private""".replace(
+                    "  ", ""
+                ).replace(
+                    "\n", "\n\t"
+                )
+            )
             x = input("Project Visibility: ")
         if x == "1":
             visibility = "public"
         elif x == "2":
             visibility = "private"
         else:
-            y = input(
-                "Wrong Input, Wanna Try again! or Exit(y/Y): ")
-            if (y.lower() == "y"):
+            y = input("Wrong Input, Wanna Try again! or Exit(y/Y): ")
+            if y.lower() == "y":
                 exit("Exiting...")
             else:
                 chooseVisibility(y)
@@ -157,7 +169,8 @@ def chooseVisibility(x=0):
 # Choose Technology by Their respective number
 def chooseTechnology():
     global technology
-    print('''Choose Technology:
+    print(
+        """Choose Technology:
     1. Flutter
     2. PHP
     3. NodeJS
@@ -170,7 +183,12 @@ def chooseTechnology():
     10. Go
     11. Laravel
     12. CodeIgniter
-    13. .Net'''.replace("  ", "").replace("\n", "\n\t"))
+    13. .Net""".replace(
+            "  ", ""
+        ).replace(
+            "\n", "\n\t"
+        )
+    )
     x = input("Technology: ")
     if x == "1":
         technology = "Flutter"
@@ -199,9 +217,8 @@ def chooseTechnology():
     elif x == "13":
         technology = ".Net"
     else:
-        y = input(
-            "Wrong Input, Wanna Try again! or Exit(y/Y): ")
-        if (y.lower() == "y"):
+        y = input("Wrong Input, Wanna Try again! or Exit(y/Y): ")
+        if y.lower() == "y":
             exit("Exiting...")
         else:
             chooseVisibility(y)
@@ -211,49 +228,55 @@ def chooseTechnology():
 def addEntryToWorkspace():
     global workspaceName
     if technology == "Flutter":
-        workspaceName = 'flutter.code-workspace'
+        workspaceName = "flutter.code-workspace"
     elif technology == "PHP":
-        workspaceName = 'pro_php.code-workspace'
+        workspaceName = "php.code-workspace"
     elif technology == "NodeJS":
-        workspaceName = 'node.code-workspace'
+        workspaceName = "node.code-workspace"
     elif technology == "Python":
-        workspaceName = 'Python.code-workspace'
+        workspaceName = "python.code-workspace"
     elif technology == "Basic Web":
-        workspaceName = 'web.code-workspace'
+        workspaceName = "web.code-workspace"
     elif technology == "React":
-        workspaceName = 'react.code-workspace'
+        workspaceName = "react.code-workspace"
     elif technology == "Angular":
-        workspaceName = 'angular.code-workspace'
+        workspaceName = "angular.code-workspace"
     elif technology == "Vue":
-        workspaceName = 'vue.code-workspace'
+        workspaceName = "vue.code-workspace"
     elif technology == "Rust":
-        workspaceName = 'rust.code-workspace'
+        workspaceName = "rust.code-workspace"
     elif technology == "Go":
-        workspaceName = 'go.code-workspace'
+        workspaceName = "go.code-workspace"
     elif technology == "Laravel":
-        workspaceName = 'pro_php.code-workspace'
+        workspaceName = "php.code-workspace"
     elif technology == "CodeIgniter":
-        workspaceName = 'pro_php.code-workspace'
+        workspaceName = "php.code-workspace"
     elif technology == ".Net":
-        workspaceName = 'Net.code-workspace'
+        workspaceName = "net.code-workspace"
     else:
         exit("Exiting...")
     os.chdir(projectsPath)
-    with open(workspaceName, 'r', encoding="utf-8") as json_file:
+    with open(workspaceName, "r", encoding="utf-8") as json_file:
         data = json_file.read()
-        data = json.loads(data.replace("'", "\"").replace("\t", "").replace(
-            "  ", "").replace("\n", "").replace(",}", "}").replace(",]", "]"))
+        data = json.loads(
+            data.replace("'", '"')
+            .replace("\t", "")
+            .replace("  ", "")
+            .replace("\n", "")
+            .replace(",}", "}")
+            .replace(",]", "]")
+        )
         data["folders"].insert(0, {"path": projectName})
-    with open(workspaceName, 'w', encoding='utf-8') as f:
+    with open(workspaceName, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-    os.startfile(projectsPath+'\\'+workspaceName)
+    os.startfile(projectsPath + "\\" + workspaceName)
 
 
 # Create Local Repo
 def localRepo():
-    _dir = projectsPath + '/' + projectName
+    _dir = projectsPath + "/" + projectName
     os.chdir(_dir)
-    os.system('git init')
+    os.system("git init")
 
 
 # Create Global Repo or Organization Repo
@@ -261,40 +284,42 @@ def globalRepo():
     global projectName
     global technology
     global description
-    _dir = projectsPath + '/' + projectName
+    _dir = projectsPath + "/" + projectName
     description = input(f"Enter Description for {tempName}: ")
     try:
         os.chdir(_dir)
-        os.system('git init')
+        os.system("git init")
         os.chdir(projectsPath)
         if repo == "global":
             if visibility == "private":
                 os.system(
-                    f'gh repo create {projectName} --private --description="{description}" --homepage="https://kingtechnologies.dev/" -s {projectName}')
+                    f'gh repo create {projectName} --private --description="{description}" --homepage="https://kingtechnologies.dev/" -s {projectName}'
+                )
             else:
                 os.system(
-                    f'gh repo create {projectName} --public --description="{description} Project" --homepage="https://kingtechnologies.dev/" -s {projectName}')
+                    f'gh repo create {projectName} --public --description="{description} Project" --homepage="https://kingtechnologies.dev/" -s {projectName}'
+                )
         else:
             if visibility == "private":
                 os.system(
-                    f'gh repo create king-technologies/{projectName} --private --description="{description}" --homepage="https://kingtechnologies.dev/" -s {projectName}')
+                    f'gh repo create king-technologies/{projectName} --private --description="{description}" --homepage="https://kingtechnologies.dev/" -s {projectName}'
+                )
             else:
                 os.system(
-                    f'gh repo create king-technologies/{projectName} --public --description="{description}" --homepage="https://kingtechnologies.dev/" -s {projectName}')
+                    f'gh repo create king-technologies/{projectName} --public --description="{description}" --homepage="https://kingtechnologies.dev/" -s {projectName}'
+                )
         commands.append("git push -u origin main")
         os.chdir(_dir)
     except:
-        x = input(
-            f'{projectName} Repo already exist Try another name or exit(y): ')
-        if (x.lower() == "y"):
+        x = input(f"{projectName} Repo already exist Try another name or exit(y): ")
+        if x.lower() == "y":
             exit("Exit")
-        elif (connect()):
+        elif connect():
             projectName = x
             globalRepo(projectName)
         else:
-            y = input(
-                "No Internet Connection! Want to work locally (y) or exit: ")
-            if (y.lower() == "y"):
+            y = input("No Internet Connection! Want to work locally (y) or exit: ")
+            if y.lower() == "y":
                 projectName = x
                 localRepo(x)
             else:
@@ -346,7 +371,7 @@ def prepareProject():
 # Call the respective function based on choice
 def createProject():
     if technology == "Flutter":
-        os.system(f'flutter upgrade -f')
+        os.system("flutter upgrade -f")
         flutter()
     elif technology == "PHP":
         php()
@@ -379,10 +404,12 @@ def createProject():
 
 # Add images folder, Readme File and GitHub Templates
 def addUtilities():
-    os.makedirs('assets/images')
+    os.makedirs("assets/images")
     repoTitle = tempName.capitalize()
     repoEmail = tempName.capitalize().replace(" ", "%20")
-    with open("D:\Projects\project-Initiator\ReadMeTemplate.md", "r", encoding="utf-8") as f:
+    with open(
+        "D:\Projects\project-Initiator\ReadMeTemplate.md", "r", encoding="utf-8"
+    ) as f:
         d = f.readlines()
     with open("README.md", "w", encoding="utf-8") as r:
         for i in d:
@@ -399,12 +426,18 @@ def addUtilities():
             r.write(y)
     src = "D:\Projects\project-Initiator\Templates"
     import subprocess
-    proc = subprocess.Popen(["cd"],
-                            stdout=subprocess.PIPE, shell=True)
+
+    proc = subprocess.Popen(["cd"], stdout=subprocess.PIPE, shell=True)
     (out, err) = proc.communicate()
-    dst = str(out).strip().replace("\\n", "").replace(
-        "b'", "").replace("'", "").replace("\\r", "")
-    if not os.path.exists(dst+"\\.github") and os.path.exists(src):
+    dst = (
+        str(out)
+        .strip()
+        .replace("\\n", "")
+        .replace("b'", "")
+        .replace("'", "")
+        .replace("\\r", "")
+    )
+    if not os.path.exists(dst + "\\.github") and os.path.exists(src):
         for item in os.listdir(src):
             s = os.path.join(src, item)
             d = os.path.join(dst, item)
